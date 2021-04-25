@@ -20,7 +20,7 @@ ADD . /go/src/github.com/dsouzajude/logspout-fluentd
 RUN cd /go/src/github.com/dsouzajude/logspout-fluentd; go mod download
 RUN cd /go/src/github.com/gliderlabs/logspout; go mod download
 RUN echo "replace github.com/dsouzajude/logspout-fluentd => /go/src/github.com/dsouzajude/logspout-fluentd" >> go.mod
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-X main.Version=$1" -o /bin/logspout
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-X main.Version=master" -o /bin/logspout
 
 
 # #
